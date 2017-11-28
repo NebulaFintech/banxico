@@ -24,4 +24,11 @@ RSpec.describe Banxico::WebServices::ExchangeRate do
     expect(exchange_rates.first.date).to eq(Date.parse("2015-01-01"))
     expect(exchange_rates.first.value).to be_a(Float)
   end
+
+  it "gets specific date" do
+    date = Date.parse("2015-02-01")
+    exchange_rates = client.do_historic_request(:udis, {start_year: "2015", end_year: "2015"})
+    exchange_rate = Banxico::ExchangeRate.get_date(exchange_rates, date)
+    expect(exchange_rate.date).to eq(date)
+  end
 end
