@@ -18,7 +18,7 @@ And then execute:
 
 ```
 client = Banxico::WebServices::ExchangeRate.new
-exchange_rate = client.do_request(:usd)
+exchange_rate = client.do_wsdl_request(:usd)
 exchange_rate.currency # mxn
 exchange_rate.date # Date.today
 exchange_rate.value # Float
