@@ -1,7 +1,4 @@
 module Banxico
-  require 'savon'
-  require 'json'
-  require 'httparty'
   module Requestor
 
     def self.series(options)
