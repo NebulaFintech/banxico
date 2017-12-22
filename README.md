@@ -1,6 +1,6 @@
 # Banxico
 
-Basic WSDL interface for banxico web services.
+Basic Banxico client.
 
 ## Installation
 
@@ -17,8 +17,7 @@ And then execute:
 ## Usage
 
 ```
-client = Banxico::WebServices::ExchangeRate.new
-exchange_rate = client.do_wsdl_request(:usd)
+exchange_rate = Banxico::Client.series({currency: :usd}).first
 exchange_rate.currency # mxn
 exchange_rate.date # Date.today
 exchange_rate.value # Float
